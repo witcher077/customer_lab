@@ -77,14 +77,19 @@ export default function SegmentDrawer() {
     };
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="relative min-h-screen items-center justify-center bg-gray-100">
             {/* Button to open drawer */}
-            <button
-                onClick={() => setIsOpen(true)}
-                className="px-4 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700"
-            >
-                Save Segment
-            </button>
+            <div className="w-full items-center justify-between px-4 py-3 border-b bg-teal-600 text-white">
+                <h2 className="text-lg font-semibold">≺ View Audience</h2>
+            </div>
+            <div className="m-20">
+                <button
+                    onClick={() => setIsOpen(true)}
+                    className="px-6 py-2 border cursor-pointer border-white text-white bg-gray-500 hover:bg-gray-600 transition rounded"
+                >
+                    Save Segment
+                </button>
+            </div>
 
             <AnimatePresence>
                 {isOpen && (
@@ -107,10 +112,10 @@ export default function SegmentDrawer() {
                             <div className="min-h-screen flex flex-col bg-white overflow-y-scroll">
                                 {/* Header */}
                                 <div className="flex items-center justify-between px-4 py-3 border-b bg-teal-600 text-white">
-                                    <h2 className="text-lg font-semibold">Saving Segment</h2>
+                                    <h2 className="text-lg font-semibold">≺ Saving Segment</h2>
                                     <button
                                         onClick={() => setIsOpen(false)}
-                                        className="text-white hover:text-gray-200 text-xl font-bold"
+                                        className="text-white hover:text-gray-200 text-xl font-bold cursor-pointer"
                                     >
                                         ×
                                     </button>
