@@ -113,12 +113,7 @@ export default function SegmentDrawer() {
                                 {/* Header */}
                                 <div className="flex items-center justify-between px-4 py-3 border-b bg-teal-600 text-white">
                                     <h2 className="text-lg font-semibold">≺ Saving Segment</h2>
-                                    <button
-                                        onClick={() => setIsOpen(false)}
-                                        className="text-white hover:text-gray-200 text-xl font-bold cursor-pointer"
-                                    >
-                                        ×
-                                    </button>
+
                                 </div>
 
                                 {/* Content */}
@@ -173,7 +168,7 @@ export default function SegmentDrawer() {
 
                                         <button
                                             onClick={HandleAddNewSegment}
-                                            className="text-teal-600 font-medium text-sm hover:underline focus:outline-none"
+                                            className="text-teal-600 font-medium text-sm hover:underline focus:outline-none cursor-pointer"
                                         >
                                             + Add new schema
                                         </button>
@@ -182,10 +177,15 @@ export default function SegmentDrawer() {
 
                                 {/* Footer */}
                                 <footer className="w-full flex justify-start items-center gap-3 bg-gray-50 p-4 rounded-b-lg border-t border-gray-200">
-                                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded transition-colors duration-200" onClick={saveSegment}>
+                                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded transition-colors cursor-pointer duration-200" onClick={saveSegment}>
                                         Save the Segment
                                     </button>
-                                    <button className="bg-white text-pink-600 border border-gray-200 hover:bg-gray-100 font-medium px-4 py-2 rounded transition-colors duration-200">
+                                    <button className="bg-white cursor-pointer text-pink-600 border border-gray-200 hover:bg-gray-100 font-medium px-4 py-2 rounded transition-colors duration-200" onClick={() => {
+                                        setIsOpen(false)
+                                        setSelectedSchema('')
+                                        setALLSelectedSchema([])
+                                        setSegmentName('')
+                                        }}>
                                         Cancel
                                     </button>
                                 </footer>
